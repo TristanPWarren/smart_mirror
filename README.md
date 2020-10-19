@@ -6,12 +6,11 @@ tristanwarren.co.uk/
 
 Instructions on how to set up:
 
-- 
+- Install Node
+- Run `node install` in project root directory
+- In `mirror.js` change `userName`, `weatherApiKey`, `cityID` and `newsApiKey` to your own values. A list of UK cities and their IDs are included in the assets directory. 
 
-- [ ] Setup node
-- [ ] Replace user name at top
-- [ ] Replace API for news
-- [ ] Replace API for weather
+
 - [ ] Check logs for errors if API not working
 - [ ] Select orientation
 - [ ] City List

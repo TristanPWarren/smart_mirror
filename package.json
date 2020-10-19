@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/TristanPWarren/smart_mirror#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-minify": "^1.0.0",
+    "uglify-es": "^3.3.9"
   }
 }

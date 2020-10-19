@@ -1,0 +1,9 @@
+{
+  "server": {
+    "cityID": 2644737
+  },
+  "client": {
+    "userName": "Your Name",
+    "rotate": false
+  }
+}

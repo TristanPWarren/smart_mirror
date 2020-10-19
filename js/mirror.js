@@ -1,11 +1,5 @@
-//TODO: Change User name
-let userName = "Tristan";
-//TODO: Replace with your API token from https://openweathermap.org/
-const weatherAPIkey = 'Your API Token';
-//TODO: Replace with your API token from https://newsapi.org/
-const newsAPIkey = 'Your API Token';
-
-const rotate = false;
+let userName = "Your Name Here";
+let rotate = false;
 
 function updateMessage() {
     console.log("Updating Message");
@@ -72,14 +66,12 @@ function updateTime() {
 function updateWeather() {
     console.log("Updating Weather");
 
-    //TODO: Change City ID to relevant location
-    let cityID = 2644737;
-
     $.ajax({
-        url: `https://api.openweathermap.org/data/2.5/weather?id=${cityID}&appid=${weatherAPIkey}`,
+        url: 'http://localhost:8080/weather.js',
         dataType: 'json',
     }).then((data) => {
         console.log(data);
+
         let icon = data.weather[0].icon;
         let location = data.name;
         let description = data.weather[0].description;
@@ -104,7 +96,7 @@ function updateNews() {
     console.log("Updating News");
 
     $.ajax({
-        url: `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${newsAPIkey}`,
+        url: `http://localhost:8080/news.js`,
         dataType: 'json',
     }).then((data) => {
         console.log(data);
@@ -169,9 +161,21 @@ function rotateMirror() {
 }
 
 $(() => {
-    if (rotate) {
-        rotateMirror();
-    }
+    $.ajax({
+        url: 'http://localhost:8080/options',
+        dataType: 'json',
+    }).then((data) => {
+        rotate = data.rotate;
+        userName = data.userName;
+
+        if (rotate) {
+            rotateMirror();
+        }
+
+        updateMessage();
+    }).catch((err) => {
+        console.error(err);
+    });
 
     updateMessage();
     updateDate();
