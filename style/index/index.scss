@@ -1,0 +1,160 @@
+@import "../reset";
+
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("/assets/fonts/Roboto-Light.ttf") format("truetype");
+}
+
+body {
+  background-color: black;
+  display: flex;
+  color: white;
+  font-family: Roboto-Light;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+#main-mirror {
+  transform-origin: 0px 0px;
+  width: 100vh;
+  height: calc(100vh - 60px);
+  max-width: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+$white: rgb(255, 255, 255);
+$light-grey: rgb(156, 156, 156);
+$grey: rgb(105, 105, 105);
+$dark-grey: rgb(31, 31, 31);
+$black: rgb(0, 0, 0);
+
+@mixin element-position ($margin-top, $color, $font-size) {
+  margin-top: $margin-top;
+  color: $color;
+  font-size: $font-size;
+}
+
+
+
+
+//TIME
+#greeting-message {
+  @include element-position(0px, $white, 45px);
+}
+
+#day {
+  @include element-position(10px, $light-grey, 28px);
+}
+
+#time {
+  display: flex;
+  margin-top: 10px;
+}
+
+#hours-minutes {
+  @include element-position(0px, $white, 55px);
+  font-weight: bold;
+}
+
+#seconds {
+  @include element-position(0px, $light-grey, 25px);
+  margin-left: 10px;
+}
+
+
+
+
+
+
+//WEATHER
+#weather {
+  display: flex;
+}
+
+#weather-icon {
+  width: 200px;
+  height: 200px;
+  background-image: url("/assets/weatherIcons/01d.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#weather-details {
+  @include element-position(15px, $light-grey, 35px)
+}
+
+#weather-location {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+#weather-description {
+  color: $white;
+}
+
+#temperature {
+  display: flex;
+  position: relative;
+  top: -5px;
+  left: -5px;
+}
+
+#temp {
+  @include element-position(10px, $white, 100px)
+}
+
+#feels-like-section {
+  @include element-position(16px, $light-grey, 44px);
+  margin-left: 10px;
+}
+
+#feels-like-title {
+  font-size: 30px;
+}
+
+#feels-like-temp {
+  font-size: 55px;
+  margin-top: 3px;
+}
+
+
+
+
+
+//NEWS SECTION
+#news {
+  position: absolute;
+  margin-top: calc(100vh - 370px);
+  height: 339px;
+  overflow: hidden;
+}
+
+.news-item {
+  margin-top: 10px;
+  height: 47px;
+}
+
+.news-item-title {
+  font-weight: bold;
+  font-size: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.news-item-details {
+  height: 20px;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.news-item {
+  color: $white;
+  position: relative;
+}
