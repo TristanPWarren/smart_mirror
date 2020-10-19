@@ -48,6 +48,7 @@ a {
   font-family: "Roboto-Light";
   src: url("/assets/fonts/Roboto-Light.ttf") format("truetype"); }
 body {
+  cursor: none;
   background-color: black;
   display: flex;
   color: white;
