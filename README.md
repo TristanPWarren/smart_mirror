@@ -11,7 +11,7 @@ Instructions on how to set up:
 - In `credentials.json` change `weatherAPIkey` and `newsAPIkey` to your own api keys. This uses the APIs from https://openweathermap.org/api and https://newsapi.org/ respectively. 
 - In `options.json` change `userName` to your name, `rotation` to true for landscape, false for portrait and `cityID` to your location. A list of UK cities and their IDs are included in the assets directory. 
 
-Instruction how to run
+Instructions on how to run
 
 - Open in browser
 - Go to localhost:8080
